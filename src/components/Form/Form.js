@@ -12,7 +12,7 @@ class Form extends Component {
         }
     }
 
-    updateIdeaForm = (event) => {
+    updateForm = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
 
@@ -49,7 +49,7 @@ class Form extends Component {
                 <input
                     type="text"
                     placeholder="Link"
-                    name="artist"
+                    name="link"
                     value={this.state.link}
                     onChange={this.updateForm}
                 />
