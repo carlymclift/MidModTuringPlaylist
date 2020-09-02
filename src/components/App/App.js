@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SongController from '../SongController/SongController';
+// import SongController from '../SongController/SongController';
 import SongContainer from '../SongContainer/SongContainer'
 import { getAllSongs } from '../../Fetch/apiCalls'
 
@@ -16,7 +16,6 @@ class App extends Component {
   async componentDidMount() {
     try {
       const data = await getAllSongs()
-      console.log(data)
       this.setState({ songs: data })
     } catch (error) {
       this.setState({error: error})
@@ -24,6 +23,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
@@ -31,13 +31,9 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
-            <div className="App-song-container">
-
             <SongContainer 
               songs={this.state.songs}
             />
-              
-            </div>
           </main>
         </div> 
       </div>
