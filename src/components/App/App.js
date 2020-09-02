@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
-import { getAllSongs } from '../FetchAPI/apiCalls'
+import SongContainer from '../SongContainer/SongContainer'
+import { getAllSongs } from '../../Fetch/apiCalls'
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class App extends Component {
     try {
       const data = await getAllSongs()
       console.log(data)
-      this.setState({ songs: data.movies })
+      this.setState({ songs: data })
     } catch (error) {
       this.setState({error: error})
     }
@@ -30,6 +31,13 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <div className="App-song-container">
+
+            <SongContainer 
+              songs={this.state.songs}
+            />
+              
+            </div>
           </main>
         </div> 
       </div>
