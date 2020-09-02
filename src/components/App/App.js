@@ -12,6 +12,7 @@ class App extends Component {
       songs: [],
       songQueue: []
     }
+    this.addNewSong = this.addNewSong.bind(this)
   }
 
   async componentDidMount() {
@@ -23,12 +24,14 @@ class App extends Component {
     }
   }
 
-  addNewSong() {
-
+  addNewSong(newSong) {
+    const songs = this.state.songs
+      songs.push(newSong)
+      this.setState({ songs: songs })
   }
 
   render() {
-    console.log(this.state)
+
     return (
       <div className="App">
         <header className="App-header">
