@@ -13,28 +13,18 @@ class Form extends Component {
     }
 
     updateIdeaForm = (event) => {
-        const inputName = event.target.name
-        const inputValue = event.target.value
-        this.setState({ [inputName]: inputValue })
-
-        // OR 
-        /*
         this.setState({ [event.target.name]: event.target.value });
-        */
     }
 
     submitSong = event => {
         event.preventDefault()
-        // create a new idea
         const newSong = {
             id: shortid.generate(),
             songName: this.state.song,
             artistName: this.state.artist,
             link: this.state.link
         }
-        // get data to app
         this.props.addNewSong(newSong)
-        //clear inputs
     }
 
     render() {
