@@ -23,6 +23,10 @@ class App extends Component {
     }
   }
 
+  addNewSong() {
+
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -33,7 +37,7 @@ class App extends Component {
         <div className="App-background">
           <main>
             <div>
-              <Form />
+              <Form addNewSong={this.addNewSong}/>
             </div>
 
             <div>
