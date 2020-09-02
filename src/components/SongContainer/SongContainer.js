@@ -4,7 +4,6 @@ import SongCard from '../SongCard/SongCard'
 
 const SongContainer = ( { songs } ) => {
     const songCards = songs.map(song => {
-        console.log(song)
         return (<SongCard {...song} key={song.id} />)
       })
 
